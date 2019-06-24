@@ -3,7 +3,7 @@ var path = require('path');
 var fs = require('fs');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/products', {}, function(err){
+mongoose.connect('mongodb://localhost/restaurants', {}, function(err){
     if(err){
         console.log('ERROR', err);
     } else {

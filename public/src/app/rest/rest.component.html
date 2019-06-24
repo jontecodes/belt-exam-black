@@ -1,0 +1,20 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Restaurant</th>
+      <th scope="col">Cuisine</th>
+      <th scope="col">Actions available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rest of restaurants">
+      <td>{{ rest.name }}</td>
+      <td>{{ rest.cusine }}</td>
+      <td><button [routerLink]="['/restaurants', rest._id]" class="btn btn-primary">Read Reviews</button> <button [routerLink]="['/restaurants', rest._id, 'edit']" class="btn btn-primary">Update</button> <button (click)="destroyRest(rest._id)" class="btn btn-primary">Delete</button></td>
+
+    </tr>
+  </tbody>
+</table>
+
+
+<router-outlet></router-outlet>

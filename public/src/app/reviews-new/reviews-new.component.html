@@ -1,0 +1,35 @@
+<h3>Write a review for {{ myRest.name }}</h3>
+
+<div *ngIf="errors">
+    <div *ngFor="let err of errors">
+
+      <p style="color: red;">*{{err.message}}*</p>
+    </div>
+
+
+  </div>
+  <p>{{errors}}</p>
+
+<form (submit)="createReview()">
+    <div class="form-group">
+      <label>Your name:</label>
+      <input type="text" class="form-control" name="revRest.customer" [(ngModel)]="revRest.customer">
+    </div>
+    <div class="form-group">
+      <label>Stars:</label>
+      <select class="form-control" name="revRest.rating" [(ngModel)]="revRest.rating">
+        <option value=1>1 star</option>
+        <option value=2>2 stars</option>
+        <option value=3>3 stars</option>
+        <option value=4>4 stars</option>
+        <option value=5>5 stars</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Your review:</label>
+      <textarea class="form-control"  rows="1" name="revRest.description" [(ngModel)]="revRest.description"></textarea>
+      <button [routerLink]="['/restaurants']"> Cancel</button>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+<router-outlet></router-outlet>

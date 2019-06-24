@@ -1,0 +1,20 @@
+<button [routerLink]="['/restaurants/', revRest._id, 'review']">New Review</button>
+<p>Reviews for {{ revRest.name }}</p>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Customer</th>
+        <th scope="col">Stars</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rev of revRest.reviews">
+        <td>{{ rev.customer }}</td>
+        <td>{{ rev.rating }}</td>
+        <td> {{ rev.description }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<router-outlet></router-outlet>
